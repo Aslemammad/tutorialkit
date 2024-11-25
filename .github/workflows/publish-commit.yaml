@@ -21,6 +21,8 @@ jobs:
       - uses: ./.github/actions/setup-and-build
 
       - name: Publish to pkg.pr.new
+        env: 
+          API_URL: https://b3060cfb.stackblitz-cr.pages.dev/
         run: >
           pnpm dlx pkg-pr-new publish --compact --pnpm
           ./packages/astro
